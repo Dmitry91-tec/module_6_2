@@ -9,13 +9,13 @@ class Vehicle:    #любой транспорт
         self.__color = __color                   #название цвета
 
     def get_model(self, __model):
-        print(f'Модель: {__model}')
+        return self.__model
 
     def get_horsepower(self, __engine_power):
-        print(f'Мощность двигателя: {__engine_power}')
+        return self.__engine_power
 
     def get_color(self, __color):
-        print(f'Цвет: {__color}')
+        return self.__color
 
     def print_info(self):
         print(f'Модель: {self.__model}\nМощность двигателя: {self.__engine_power}\nЦвет: {self.__color}\nВладелец: {self.owner}')
@@ -24,7 +24,7 @@ class Vehicle:    #любой транспорт
         for i in range(len(Vehicle.__COLOR_VARIANTS)):
             if new_color.lower() in Vehicle.__COLOR_VARIANTS[i].lower():
                 self.__color = new_color
-            break
+                return
         print(f'Нельзя сменить цвет на {new_color}')
 
 class Sedan(Vehicle):      #наследник класса Vehicle
